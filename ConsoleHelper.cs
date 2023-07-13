@@ -16,7 +16,7 @@ namespace ExtensionMethodApp
             return output;
         }
 
-        public static int RequestInt(this int message)
+        public static int RequestInt(this string message)
         {
             int output = 0;
             bool isValidAge = false;
@@ -25,6 +25,18 @@ namespace ExtensionMethodApp
             {
                 Console.WriteLine(message);
                 isValidAge = int.TryParse(Console.ReadLine(), out output);
+            }
+            return output;
+        }
+        public static float RequestFloat(this string message)
+        {
+            float output = 0.0f;
+            bool isValidFloat = false;
+
+            while (isValidFloat == false)
+            {
+                Console.WriteLine(message);
+                isValidFloat = float.TryParse(Console.ReadLine(),out output);
             }
             return output;
         }

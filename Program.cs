@@ -14,13 +14,11 @@ namespace ExtensionMethodApp
 
             person.FirstName = "What is your first name:".RequestString();
             
-            person.LastName = "What is your first name:".RequestString();
+            person.LastName = "What is your last name:".RequestString();
 
-            Console.WriteLine("What is your first name:");
-            person.Age = int.Parse(Console.ReadLine());
+            person.Age = "What is your age:".RequestInt();
 
-            Console.WriteLine("What is your first name:");
-            person.NumberOfFingers = int.Parse(Console.ReadLine());
+            person.NumberOfFingers = "How many fingers you have:".RequestFloat();
 
 
             Console.ReadLine();
