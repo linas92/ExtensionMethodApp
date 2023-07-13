@@ -18,12 +18,12 @@ namespace ExtensionMethodApp
 
         public static int RequestInt(this string message, int minValue, int maxValue)
         {
-
+            return message.RequestInt(true, minValue, maxValue);
         }
 
         public static int RequestInt(this string message)
         {
-            
+            return message.RequestInt(false); // might need to ignore min max value
         }
 
         // private external method to overload RequestInt
