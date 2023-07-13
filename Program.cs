@@ -13,9 +13,8 @@ namespace ExtensionMethodApp
             PersonModel person = new PersonModel();
 
             person.FirstName = "What is your first name:".RequestString();
-
-            Console.WriteLine("What is your first name:");
-            person.LastName = Console.ReadLine();
+            
+            person.LastName = "What is your first name:".RequestString();
 
             Console.WriteLine("What is your first name:");
             person.Age = int.Parse(Console.ReadLine());
