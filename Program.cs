@@ -18,7 +18,7 @@ namespace ExtensionMethodApp
 
             person.Age = "What is your age:".RequestInt(0, 120); // keep forgetting that ctrl + shift + . shows the overloads.
 
-            person.NumberOfFingers = "How many fingers you have:".RequestFloat();
+            person.EyeSight = "How many meals you eat everyday:".RequestFloat(0,0);
 
 
             Console.ReadLine();
@@ -29,7 +29,8 @@ namespace ExtensionMethodApp
 
 /*
 Next days plan:
-Finish NumberOfFingers method. (seriously, rename it to something like 
+Finish NumberOfFingers method.
+
 Add some messages (when the user enters "wrong" data). 
 Maybe rename methods so the naming is more understandable. 
 Double check the code to see if its trully readable and easily understandable.

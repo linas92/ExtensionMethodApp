@@ -23,10 +23,9 @@ namespace ExtensionMethodApp
 
         public static int RequestInt(this string message)
         {
-            return message.RequestInt(false); // might need to ignore min max value
+            return message.RequestInt(false);
         }
 
-        // private external method to overload RequestInt
         private static int RequestInt(this string message, bool useMinMax, int minValue = 0, int maxValue = 0) 
         {
             int output = 0;
@@ -40,30 +39,37 @@ namespace ExtensionMethodApp
 
                 if (useMinMax == true)
                 {
-                    isInvalidAgeRange = (output >= minValue && output <= maxValue); // thank you intelliSense for finishing this as I ran out of brain
-                    //if (output >= minValue && output <= maxValue)
-                    //{
-                    //    isInvalidAgeRange = true;
-                    //}
-                    //else
-                    //{
-                    //    isInvalidAgeRange = true;
-                    //}
-                    // left the commented "longer" code so I can ask if the "shorter" way isn't too hard to read
+                    isInvalidAgeRange = (output >= minValue && output <= maxValue);
                 }
             }
             return output;
         }
 
+        public static float RequestFloat(this string message, float minValue, float maxValue)
+        {
+            return message.RequestFloat(true, minValue, maxValue);
+        }
+
         public static float RequestFloat(this string message)
         {
-            float output = 0.0f;
-            bool isValidFloat = false;
+            return message.RequestFloat(false);
+        }
 
-            while (isValidFloat == false)
+        private static float RequestFloat(this string message, bool useMinMax, float minValue = 0, float maxValue = 0)
+        {
+            float output = 0;
+            bool isValidEyeSight = false;
+            bool isInvalidEyeSightRange = true;
+
+            while (isValidEyeSight == false || isInvalidEyeSightRange == false)
             {
                 Console.WriteLine(message);
-                isValidFloat = float.TryParse(Console.ReadLine(),out output);
+                isValidEyeSight = float.TryParse(Console.ReadLine(), out output);
+
+                if (useMinMax == true)
+                {
+                    isInvalidEyeSightRange = (output >= minValue && output <= maxValue);
+                }
             }
             return output;
         }
